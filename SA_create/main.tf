@@ -31,12 +31,10 @@ resource "yandex_iam_service_account_key" "sa_json_key" {
   description        = "JSON key for Gitea Actions CI/CD"
 }
 
-# 2. Выводим ID аккаунта (он не секретный)
 output "service_account_id" {
   value = yandex_iam_service_account.sa.id
 }
 
-# 3. Выводим сам секретный JSON-ключ
 output "sa_json_key_content" {
   description = "Содержимое JSON-ключа для авторизации"
   value       = yandex_iam_service_account_key.sa_json_key.private_key

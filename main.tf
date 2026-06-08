@@ -105,7 +105,7 @@ resource "yandex_compute_instance" "pharmacy_vm" {
     }
 
     metadata = {
-        ssh-keys = "ubuntu:${file("C:/Users/Ayanami/.ssh/id_rsa.pub")}"
+        ssh-keys = "ubuntu:${file(var.ssh_public_key_path)}"
     }
 }
 
